@@ -1,11 +1,7 @@
 <%= render "nav" %>
 <% if user_signed_in?  %>
   <% if (current_user.user_role.downcase =="instructor" && @course.user_id==current_user.id) %>
-      <%
-=begin%>
  <%= link_to(image_tag(@course.image.thumb.url, alt: 'Image',:size => "286x180"), @course.image.url, target: '_blank') if @course.image? %>  
-<%
-=end%>
       <h2>Description: </h2><%= @course.description %></h2>
       <h2> Category: </h2><%= @course.category %></h2>
       <h2> Cost: </h2><%= @course.cost %></h2>
@@ -25,11 +21,8 @@
       </ul>
   <% else %>
     <% if @reqcourse.include? @course.id %>
-      <%
-=begin%>
+      
  <%= link_to(image_tag(@course.image.thumb.url, alt: 'Image',:size => "286x180"), @course.image.url, target: '_blank') if @course.image? %>  
-<%
-=end%>
       <h2>Description: </h2><%= @course.description %></h2>
       <h2> Category: </h2><%= @course.category %></h2>
       <h2> Cost: </h2><%= @course.cost %></h2>
@@ -39,11 +32,8 @@
       <%= link_to "Home", root_path, class:"btn btn-primary ms-2"%>
       </h3>
     <% else %>
-      <%
-=begin%>
  <%= link_to(image_tag(@course.image.thumb.url, alt: 'Image',:size => "286x180"), @course.image.url, target: '_blank') if @course.image? %>  
-<%
-=end%>
+
       <h2>Description: </h2><%= @course.description %></h2>
       <h2> Category: </h2><%= @course.category %></h2>
       <h2> Cost: </h2><%= @course.cost %></h2>
@@ -63,11 +53,8 @@
     <% end %> 
   <% end %>
 <% else %>
-  <%
-=begin%>
+  
  <%= link_to(image_tag(@course.image.thumb.url, alt: 'Image',:size => "286x180"), @course.image.url, target: '_blank') if @course.image? %>  
-<%
-=end%>
   <h2>Description: </h2><%= @course.description %></h2>
   <h2> Category: </h2><%= @course.category %></h2>
   <h2> Cost: </h2><%= @course.cost %></h2>
