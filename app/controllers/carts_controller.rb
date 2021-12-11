@@ -10,7 +10,8 @@ class CartsController < ApplicationController
          end
         end
         @order_items.clear
-        render 'carts/final'
+        redirect_to courses_path
+        # render 'carts/final'
       end
       def destroy
         @cart = @current_cart

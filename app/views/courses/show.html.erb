@@ -14,11 +14,6 @@
         <%= link_to "Edit", edit_course_path(@course),class:"btn btn-primary ms-2"%>
         <%= link_to "Delete", course_path(@course),method: :delete,data: { confirm: "Are you sure" } , class:"btn btn-primary ms-2"%> 
       </h3>
-      <ul>
-         <li><%= link_to "Home", root_path%> | <%= link_to "Add Video",new_course_video_path(@course) %> | <%= link_to "Edit", edit_course_path(@course)%> |<%= link_to "Delete", course_path(@course),
-                  method: :delete,
-                  data: { confirm: "Are you sure" } %> 
-      </ul>
   <% else %>
     <% if @reqcourse.include? @course.id %>
       
