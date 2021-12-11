@@ -1,0 +1,20 @@
+<%= form_with model: [@course, @course.videos.build] do |form| %>
+<div class="field btn-lg d-grid col-md-3 offset-md-4" style="text-align:center">
+<div class="border border-dark border-1 ml-2 mb-2">
+  <div>
+    <%= form.text_field :title,placeholder: "Title", autofocus: true, autocomplete: "Title",class:"text-decoration-none shadow-none col-md-12 offset-md-0 ps-2 fs-5"%>
+  </div>
+</div>
+<div class="border border-dark border-1 ml-2 mb-2">
+    <div>
+    <%= form.text_field :url ,placeholder: "URL", autofocus: true, autocomplete: "URL",class:"text-decoration-none shadow-none col-md-12 offset-md-0 ps-2 fs-5"%><br>
+  </div>
+</div>  
+  <div>
+    <h2><%= form.submit class:"btn-group  btn-primary btn-group-lg ms-2"%></h2>
+  </div>
+  <ul>
+  <%= link_to "Home", root_path, class:"btn btn-primary"%>
+  </ul>
+  </div>
+<% end %>

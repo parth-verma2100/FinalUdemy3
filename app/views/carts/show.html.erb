@@ -1,0 +1,27 @@
+<%
+=begin%>
+ <%= render 'courses/nav' %>
+<h1 style="text-align:center">Shopping Cart</h1>
+ <% if @cart.empty? %>
+<h3 style="color:red">Please add item to cart</h3>
+<% else %>
+<ul>
+  <% @cart.each do |cart| %>
+    <li>
+        <%= link_to cart.course_name %>
+    </li>
+  <% end %>
+  <%= link_to "Checkout", checkout_path , class: "btn btn-primary btn-lg mt-4"%>
+</ul>
+<% end %> 
+ <div class="cart">
+<%= render 'carts/cart' %>
+</div> 
+<%= render 'courses/foot'  %>
+ 
+<%
+=end%>
+
+<div class="cart-item">
+<%= render 'cart_item' %>
+</div> 
